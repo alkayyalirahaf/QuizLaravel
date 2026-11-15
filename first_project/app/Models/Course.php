@@ -10,22 +10,26 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Course extends Model
 {
-    protected $fillable = ['course_code', 'title', 'credit_hours', 
-'semester'];
-    public function courses():HasMany{
+  protected $fillable = [
+        'lecturer_id',
+        'course_code',
+        'title',
+        'credit_hours',
+        'semester',
+    ];
+    
+    public function lectures():HasMany{
         return $this->hasMany(Lecture::class);
 
 
     }
         
-       public function user () :BelongsTo
+       public function lecturer() :BelongsTo
     {
 
         return $this->belongsTo(Lecturer::class);
  
     }
-
-
 
 
 public function users(): BelongsToMany

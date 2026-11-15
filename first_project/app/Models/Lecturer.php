@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class lecturer extends Model
 {
 
-protected $table = [ 'employee_number', 'department', 'office_room', 'photo', 'isActivated'];
+protected $fillable = [ 'employee_number', 'department', 'office_room', 'photo', 'isActivated'];
 
-      public function user () :BelongsTo
+      public function user() :BelongsTo
     {
 
         return $this->belongsTo(User::class);

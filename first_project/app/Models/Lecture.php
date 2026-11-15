@@ -9,7 +9,7 @@ class lecture extends Model
 {
     protected $fillable = [ 'title', 'topic_summary', 'hall_name', 
 'scheduled_at'];
-      public function user () :BelongsTo
+      public function course() :BelongsTo
     {
 
         return $this->belongsTo(Course::class);
